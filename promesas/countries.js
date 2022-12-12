@@ -20,5 +20,26 @@ function setCountries () {
 }
 
 function infocountry() {
-    console.log("Info Pais...")
+    console.log("Info Pais...");
+    fetch(`${url}/alpha/${this.value}`)
+    .then(resp => {
+        if (resp.ok) {
+            return resp.json()
+        } else {
+            throw new Error ("Error en API")
+        }
+    })
+    .then(data => {
+        console.log(data[0].name.common);
+        const tabla_paises= document.getElementById('tabla_paises');
+        tabla_paises.innerHTML += 
+        `<tr>
+            <td><img src="${data[0].flags.png}" width="150"></td>
+            <td>${data[0].name.common}</td>
+            <td>${data[0].region}</td>
+            <td>${data[0].population}</td>
+            <td>${data[0].area}</td>
+          
+        </tr>`;
+    })
 }
