@@ -22,8 +22,9 @@ h1 {
 form {
     background-color: burlywood;
     margin: 0 auto;
-    width: 800px;
-    height: 650px;
+    width: 1100px;
+    height: auto;
+    padding: 50px;
     border-radius: 20px;
     box-shadow: rgba(87, 87, 87, 0.541) 2px 2px 2px 2px;
     display: flex;
